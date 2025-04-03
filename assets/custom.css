@@ -1,0 +1,33 @@
+/* assets/custom.css */
+
+/* Make the brand name slightly bolder/larger if desired */
+.navbar-brand {
+    font-weight: 500; /* Or bold */
+    font-size: 1.4rem; /* Adjust as needed */
+}
+
+/* Add a subtle hover effect to project cards */
+.card.shadow-sm:hover {
+    box-shadow: 0 .25rem .75rem rgba(0,0,0,.1) !important; /* Slightly larger shadow on hover */
+    transform: translateY(-3px);
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+/* Add a bit more space below headings */
+h1, h2, h3, h4, h5, h6 {
+    margin-top: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+/* Style Plotly graphs container if needed */
+.dash-graph {
+    /* Example: add a light border */
+    /* border: 1px solid #eee; */
+    /* border-radius: 4px; */
+    padding: 10px; /* Add some internal padding around graphs */
+    margin-bottom: 1rem; /* Space below graphs */
+}
+
+/* You can add more specific styles here */
+/* For example, target specific elements by ID if you assign them in your layout */
+/* #my-specific-div { background-color: #f8f9fa; } */
