@@ -1,23 +1,29 @@
+// vercel.json - Option 1: Remove the config line (Recommended)
+{
+  "version": 2,
+  "builds": [
+    {
+      "src": "app.py",
+      "use": "@vercel/python"
+      // REMOVED "config": { "maxLambdaSize": "15mb" }
+    }
+  ],
+  "routes": [
+    // ... your routes ...
+  ]
+}
+
+// vercel.json - Option 2: Increase the value (Try if default fails)
 {
   "version": 2,
   "builds": [
     {
       "src": "app.py",
       "use": "@vercel/python",
-      "config": { "maxLambdaSize": "50mb" }
+      "config": { "maxLambdaSize": "50mb" } // Increased value
     }
   ],
   "routes": [
-    {
-      "src": "/assets/(.*)",
-      "headers": {
-        "cache-control": "public, max-age=31536000, immutable"
-      },
-      "dest": "/assets/$1"
-    },
-    {
-      "src": "/(.*)",
-      "dest": "app.py"
-    }
+    // ... your routes ...
   ]
 }
