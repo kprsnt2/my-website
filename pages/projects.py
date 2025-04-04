@@ -24,7 +24,7 @@ layout = dbc.Container([
         ], className="shadow-sm h-100"),
         width=12, md=6, lg=4, className="mb-4"), # mb-4 adds margin bottom
 
-        # Project 2: Gemma3 Chatbot
+        # Project 2: Local AI Chatbot
         dbc.Col(dbc.Card([
             dbc.CardHeader("Local AI/LLM Chatbot"),
             dbc.CardBody([
@@ -40,7 +40,7 @@ layout = dbc.Container([
             dbc.CardHeader("AI Story Teller"),
             dbc.CardBody([
                 html.P("Generates short stories based on user prompts using AI models. (Details coming soon!)"),
-                dbc.Button("Visit Chat", href="https://storygemini.streamlit.app", target="_blank", color="info", className="me-1"),
+                dbc.Button("Visit Here", href="https://storygemini.streamlit.app", target="_blank", color="info", className="me-1"),
             ])
         # Add shadow-sm for subtle shadow, h-100 to make cards in a row equal height
         ], className="shadow-sm h-100"),
@@ -51,7 +51,7 @@ layout = dbc.Container([
             dbc.CardHeader("AI Tutor"),
             dbc.CardBody([
                 html.P("An interactive AI tutor for specific subjects. (Till Grade 10)"),
-                dbc.Button("Visit Chat", href="https://aitutor.streamlit.app/", target="_blank", color="info", className="me-1"),
+                dbc.Button("Visit Here", href="https://aitutor.streamlit.app/", target="_blank", color="info", className="me-1"),
             ])
         # Add shadow-sm for subtle shadow, h-100 to make cards in a row equal height
         ], className="shadow-sm h-100"),
@@ -62,13 +62,35 @@ layout = dbc.Container([
             dbc.CardHeader("CSV Data Plotter"),
             dbc.CardBody([
                 html.P("Upload a CSV file and generate various plots interactively."),
-                dbc.Button("Visit Chat", href="https://plotcharts.streamlit.app", target="_blank", color="info", className="me-1"),
+                dbc.Button("Visit Here", href="https://plotcharts.streamlit.app", target="_blank", color="info", className="me-1"),
             ])
         # Add shadow-sm for subtle shadow, h-100 to make cards in a row equal height
         ], className="shadow-sm h-100"),
         width=12, md=6, lg=4, className="mb-4"), # mb-4 adds margin bottom
 
         # Add more projects as needed
+        # Project 6: Python Website (Placeholder - could be integrated into Visualizations page)
+        dbc.Col(dbc.Card([
+            dbc.CardHeader("Python Website"),
+            dbc.CardBody([
+                html.P("Created website based on Python and deployed in on Render. (This app will sleep if site is inactive for 15min, will take time to load)"),
+                dbc.Button("Visit Site", href="https://python.kprnst.in", target="_blank", color="info", className="me-1"),
+            ])
+        # Add shadow-sm for subtle shadow, h-100 to make cards in a row equal height
+        ], className="shadow-sm h-100"),
+        width=12, md=6, lg=4, className="mb-4"), # mb-4 adds margin bottom
+
+         # Project 7: Note.js Website (Placeholder - could be integrated into Visualizations page)
+        dbc.Col(dbc.Card([
+            dbc.CardHeader("Next.js Website"),
+            dbc.CardBody([
+                html.P("Created website based on Next.js with vibe coding via v0.dev and deployed in on Vercel."),
+                dbc.Button("Visit Site", href="https://kprnst.in", target="_blank", color="info", className="me-1"),
+            ])
+        # Add shadow-sm for subtle shadow, h-100 to make cards in a row equal height
+        ], className="shadow-sm h-100"),
+        width=12, md=6, lg=4, className="mb-4"), # mb-4 adds margin bottom
+
 
     ], className="mt-3"), # Margin top for spacing
 ])
