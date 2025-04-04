@@ -26,10 +26,10 @@ layout = dbc.Container([
 
         # Project 2: Gemma3 Chatbot
         dbc.Col(dbc.Card([
-            dbc.CardHeader("Gemma3 LLM Chatbot"),
+            dbc.CardHeader("Local AI/LLM Chatbot"),
             dbc.CardBody([
-                html.P("An interactive chatbot using Google's Gemma3 model, served via Ollama and Open WebUI on Google Cloud Run."),
-                dbc.Button("Visit Chat", href="https://chat.kprsnt.in", target="_blank", color="info", className="me-1"),
+                html.P("An interactive local model which hosted online using Google's Gemma3 model, served via Ollama and Open WebUI on Google Cloud Run."),
+                dbc.Button("Visit Chat", href="chat.kprsnt.in", target="_blank", color="info", className="me-1"),
             ])
         # Add shadow-sm for subtle shadow, h-100 to make cards in a row equal height
         ], className="shadow-sm h-100"),
@@ -50,8 +50,8 @@ layout = dbc.Container([
         dbc.Col(dbc.Card([
             dbc.CardHeader("AI Tutor"),
             dbc.CardBody([
-                html.P("An interactive AI tutor for specific subjects. (Details coming soon!)"),
-                dbc.Button("Visit Chat", href="https://chat.kprsnt.in", target="_blank", color="info", className="me-1"),
+                html.P("An interactive AI tutor for specific subjects. (Till Grade 10)"),
+                dbc.Button("Visit Chat", href="https://aitutor.streamlit.app/", target="_blank", color="info", className="me-1"),
             ])
         # Add shadow-sm for subtle shadow, h-100 to make cards in a row equal height
         ], className="shadow-sm h-100"),
@@ -61,8 +61,8 @@ layout = dbc.Container([
         dbc.Col(dbc.Card([
             dbc.CardHeader("CSV Data Plotter"),
             dbc.CardBody([
-                html.P("Upload a CSV file and generate various plots interactively. (Will be integrated soon!)"),
-                # Link to the visualization page section or its own page later
+                html.P("Upload a CSV file and generate various plots interactively."),
+                dbc.Button("Visit Chat", href="https://plotcharts.streamlit.app", target="_blank", color="info", className="me-1"),
             ])
         # Add shadow-sm for subtle shadow, h-100 to make cards in a row equal height
         ], className="shadow-sm h-100"),
