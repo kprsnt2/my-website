@@ -19,7 +19,7 @@ layout = dbc.Container([
             ),
             html.P(
                 "This website showcases my skills, projects, and journey. It's built entirely in Python using Dash and Plotly, "
-                "demonstrating my ability to create interactive web applications and data visualizations."
+                "demonstrating my ability to create interactive web applications and data visualizations using AI Chatbots."
             ),
         ], width=12, className="p-3") # p-3 adds padding on all sides
     ])
