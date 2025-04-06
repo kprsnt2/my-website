@@ -30,10 +30,10 @@ layout = dbc.Container([
 
         # Python Website
         dbc.Col(dbc.Card([
-            dbc.CardHeader("Python Portfolio Website"),
+            dbc.CardHeader("Python Portfolio Website - This one"),
             dbc.CardBody([
                 html.P("A personal portfolio website fully built with Python and deployed on Render. Showcases projects and skills."),
-                dbc.Button("Visit Site", href="https://kprnst.in", target="_blank", color="info", className="me-1"),
+                dbc.Button("Visit Site", href="https://kprsnt.in", target="_blank", color="info", className="me-1"),
             ])
         ], className="shadow-sm h-100"), width=12, md=6, lg=4, className="mb-4"),
 
@@ -51,7 +51,7 @@ layout = dbc.Container([
             dbc.CardHeader("Next.js Developer Site"),
             dbc.CardBody([
                 html.P("A work-in-progress personal website created using Next.js with modern UI concepts from v0.dev. Deployed on Vercel."),
-                dbc.Button("Visit Site", href="https://vercel.kprnst.in", target="_blank", color="info", className="me-1"),
+                dbc.Button("Visit Site", href="https://vercel.kprsnt.in", target="_blank", color="info", className="me-1"),
             ])
         ], className="shadow-sm h-100"), width=12, md=6, lg=4, className="mb-4"),
 
