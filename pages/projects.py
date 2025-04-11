@@ -10,6 +10,15 @@ layout = dbc.Container([
         dbc.Col(html.H2("My Projects"), width=12),
     ]),
     dbc.Row([
+        # Local AI Debate
+        dbc.Col(dbc.Card([
+            dbc.CardHeader("AI Debate on any Topic"),
+            dbc.CardBody([
+                html.P("Vibe-coded on mobile using AI. Real-time debate generation and discussion platform using Firebase Studio."),
+                dbc.Button("Visit Site", href="https://aidebate.kprsnt.in", target="_blank", color="info", className="me-1"),
+            ])
+        ], className="shadow-sm h-100"), width=12, md=6, lg=4, className="mb-4"),
+
         # Local AI Chatbot
         dbc.Col(dbc.Card([
             dbc.CardHeader("Local AI/LLM Chatbot"),
