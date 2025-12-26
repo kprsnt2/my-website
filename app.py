@@ -18,7 +18,8 @@ app = dash.Dash(
     external_stylesheets=[APP_THEME, GOOGLE_FONTS, FONT_AWESOME], 
     suppress_callback_exceptions=True,
     title="Prashanth Kumar Kadasi | Portfolio",
-    update_title="Loading..."
+    update_title="Loading...",
+    url_base_pathname='/'  # Explicitly set base pathname
 )
 
 # Custom favicon (PK initials)
@@ -41,33 +42,30 @@ app.index_string = '''
     </body>
 </html>
 '''
-server = app.server # Expose server variable for Procfile/Gunicorn
 
 # --- Navigation Bar ---
 navbar = dbc.NavbarSimple(
     children=[
-        # Use dcc.Link for multi-page navigation
         dbc.NavItem(dbc.NavLink(page['name'], href=page['relative_path']))
-        for page in dash.page_registry.values() # Automatically iterates through pages in the 'pages' folder
-        # Add external links if needed
-        # dbc.NavItem(dbc.NavLink("My GitHub", href="YOUR_GITHUB_LINK", external_link=True, target="_blank")),
+        for page in dash.page_registry.values()
     ],
-    brand="Prashanth Kadasi", # Your Brand Name
-    brand_href="/",    # Link brand name to home page
+    brand="Prashanth Kadasi",
+    brand_href="/",
     color="primary",
     dark=True,
-    className="mb-4", # Margin bottom for spacing
+    className="mb-4",
 )
 
 # --- Main Layout ---
 app.layout = dbc.Container([
     navbar,
-    # Add vertical padding to the page container area
-    html.Div(dash.page_container, className="py-4") # py-4 adds padding top and bottom
+    html.Div(dash.page_container, className="py-4")
 ], fluid=True)
 
+# CRITICAL: Expose the Flask server for Vercel
+server = app.server
 
-# --- Run the App ---
+# This is important - remove the if __name__ == '__main__' block
+# or keep it but don't use app.run()
 if __name__ == '__main__':
-    # Use app.run() instead of app.run_server()
-    app.run(debug=True) # debug=True for development (auto-reloads)
+    app.run_server(debug=True, host='0.0.0.0', port=8050)
