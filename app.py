@@ -3,11 +3,44 @@ import dash
 import dash_bootstrap_components as dbc
 from dash import html, dcc
 
-# Use Dash Bootstrap Components theme
-# Find more themes here: https://bootswatch.com/
-APP_THEME = dbc.themes.LUX
+# Dark theme for modern aesthetic
+APP_THEME = dbc.themes.DARKLY
 
-app = dash.Dash(__name__, use_pages=True, external_stylesheets=[APP_THEME], suppress_callback_exceptions=True)
+# Google Fonts for premium typography
+GOOGLE_FONTS = "https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+
+# Font Awesome for icons
+FONT_AWESOME = "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+
+app = dash.Dash(
+    __name__, 
+    use_pages=True, 
+    external_stylesheets=[APP_THEME, GOOGLE_FONTS, FONT_AWESOME], 
+    suppress_callback_exceptions=True,
+    title="Prashanth Kumar Kadasi | Portfolio",
+    update_title="Loading..."
+)
+
+# Custom favicon (PK initials)
+app.index_string = '''
+<!DOCTYPE html>
+<html>
+    <head>
+        {%metas%}
+        <title>{%title%}</title>
+        <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect fill='%23667eea' rx='20' width='100' height='100'/><text x='50' y='65' font-family='Arial' font-size='45' font-weight='bold' fill='white' text-anchor='middle'>PK</text></svg>">
+        {%css%}
+    </head>
+    <body>
+        {%app_entry%}
+        <footer>
+            {%config%}
+            {%scripts%}
+            {%renderer%}
+        </footer>
+    </body>
+</html>
+'''
 server = app.server # Expose server variable for Procfile/Gunicorn
 
 # --- Navigation Bar ---
