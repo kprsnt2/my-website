@@ -34,7 +34,7 @@ layout = dbc.Container([
                     ], href="https://www.linkedin.com/in/prashanth-kumar-kadasi-b5281765/", target="_blank", className="social-btn"),
                     html.A([
                         html.I(className="fab fa-x-twitter"),
-                        " X"
+                        " 𝕏"
                     ], href="https://x.com/prashanth_29", target="_blank", className="social-btn"),
                     html.A([
                         html.I(className="fas fa-envelope"),
