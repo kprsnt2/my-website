@@ -1,0 +1,7 @@
+name = "interview-email-worker"
+main = "worker.js"
+compatibility_date = "2024-09-01"
+compatibility_flags = ["nodejs_compat"]
+
+[vars]
+VERCEL_API_URL = "https://kprsnt.in/api/interview"

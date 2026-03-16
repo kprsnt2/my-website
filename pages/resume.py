@@ -6,21 +6,32 @@ import dash_bootstrap_components as dbc
 dash.register_page(__name__, name='Resume', order=3)
 
 # Resume data
-experience = {
-    "company": "Pi Software Solutions Pvt Ltd (Pi-Datametrics)",
-    "role": "Data Analyst",
-    "period": "Mar 2023 – Present",
-    "location": "Remote",
-    "highlights": [
-        "Analyzed global job market and SEO trends to extract key business insights",
-        "Extracted and processed data from SQL Server & Azure, leveraging Tableau and Looker Studio",
-        "Developed automated dashboards using AppScript, BigQuery and Looker Studio",
-        "Conducted sentiment analysis on election datasets",
-        "Built predictive models (ARIMA, LSTM) for market trend forecasting",
-        "Created Brand reports & market analysis for US & UK markets",
-        "Collaborate cross-functionally to deliver comprehensive analyses"
-    ]
-}
+experiences = [
+    {
+        "company": "Black Piano",
+        "role": "Data Analyst",
+        "period": "Mar 2026 – Present",
+        "location": "Remote",
+        "highlights": [
+            "Continuing work for the Pi Datametrics client after transition from previous employer.",
+            "Maintaining and enhancing data pipelines, dashboards, and analytics reporting."
+        ]
+    },
+    {
+        "company": "Pi Software Solutions Pvt Ltd (Pi - Datametrics)",
+        "role": "Data Analyst",
+        "period": "Mar 2023 – Feb 2026",
+        "location": "Remote",
+        "highlights": [
+            "Developed a Python package for Pi-API and deployed a web service on Render for one-click BigQuery uploads/downloads.",
+            "Built AI/LLM reports and end-to-end data pipelines for analytics dashboards.",
+            "Automated dashboards using Apps Script, BigQuery, Tableau, and Looker Studio.",
+            "Conducted sentiment analysis on election datasets and built predictive models (ARIMA, LSTM).",
+            "Created Brand reports & market analysis reports on industries like Insurance, Gambling, and E-commerce (Black Friday, Thanksgiving, Christmas trends, etc.) for the US & UK markets.",
+            "Delivered 15+ dashboards and 30+ reports across elections, brands, and market analysis."
+        ]
+    }
+]
 
 projects = [
     {"name": "Fine-Tuned LLM (Mistral-7B, LoRA)", "tech": "Mistral 7b, Hugging Face, LoRA, Python", "desc": "Fine-tuned a quantized Mistral-7B model using QLoRA for philosophical Q&A"},
@@ -73,15 +84,21 @@ layout = dbc.Container([
                 dbc.CardHeader("💼 Experience"),
                 dbc.CardBody([
                     html.Div([
-                        html.H5(experience["company"], style={'marginBottom': '0.25rem'}),
+                        # Render each experience entry
                         html.Div([
-                            html.Span(experience["role"], style={'fontWeight': '600', 'color': '#667eea'}),
-                            html.Span(f" | {experience['period']} | {experience['location']}", style={'color': '#a0a0b0'})
-                        ], style={'marginBottom': '1rem'}),
-                        html.Ul([
-                            html.Li(highlight, style={'marginBottom': '0.5rem', 'color': '#c0c0d0'})
-                            for highlight in experience["highlights"]
-                        ], style={'paddingLeft': '1.25rem'})
+                            html.Div([
+                                html.H5(exp["company"], style={'marginBottom': '0.25rem'}),
+                                html.Div([
+                                    html.Span(exp["role"], style={'fontWeight': '600', 'color': '#667eea'}),
+                                    html.Span(f" | {exp['period']} | {exp['location']}", style={'color': '#a0a0b0'})
+                                ], style={'marginBottom': '1rem'}),
+                                html.Ul([
+                                    html.Li(highlight, style={'marginBottom': '0.5rem', 'color': '#c0c0d0'})
+                                    for highlight in exp["highlights"]
+                                ], style={'paddingLeft': '1.25rem'})
+                            ], style={'marginBottom': '2rem'} if i < len(experiences) - 1 else {})
+                        ])
+                        for i, exp in enumerate(experiences)
                     ])
                 ])
             ])
